@@ -6,11 +6,11 @@ public abstract class Character {
 	private int lifePoints;
 	private boolean specialAbility;
 	
-	public Character(String name, int lifePoints, boolean specialAbility) {
+	public Character(String name) {
 		super();
 		this.name = name;
-		this.lifePoints = lifePoints;
-		this.specialAbility = specialAbility;
+		this.lifePoints = 100;
+		this.specialAbility = false;
 	}
 
 	public String getName() {
