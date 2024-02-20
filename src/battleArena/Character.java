@@ -1,6 +1,6 @@
 package battleArena;
 
-public class Character {
+public abstract class Character {
 	
 	private String name;
 	private int lifePoints;
@@ -39,6 +39,13 @@ public class Character {
 				+ "/n" + "Special Ability: " + specialAbility;
 	}
 	
+	public void getDamage(int points) {
+		this.lifePoints = this.lifePoints - points;
+		if(this.lifePoints < 0) {
+			this.lifePoints = 0;
+		}
+	}
 	
-	
+	public abstract void attack(Character enemy);
+		
 }
