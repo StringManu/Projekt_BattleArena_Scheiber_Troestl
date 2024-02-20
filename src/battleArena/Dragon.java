@@ -7,7 +7,7 @@ public class Dragon extends Character{
 	private int attackDamage;
 	
 	public Dragon(String name, int lifePoints, boolean specialAbility) {
-		super(name, lifePoints, specialAbility);
+		super(name);
 		this.attackDamage = ThreadLocalRandom.current().nextInt(20,25);
 	}
 
