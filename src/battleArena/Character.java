@@ -31,6 +31,13 @@ public class Character {
 	public void setSpecialAbility(boolean specialAbility) {
 		this.specialAbility = specialAbility;
 	}
+
+	@Override
+	public String toString() {
+		return "Character: " + name 
+				+ "/n" + "Life Points: " + lifePoints 
+				+ "/n" + "Special Ability: " + specialAbility;
+	}
 	
 	
 	
