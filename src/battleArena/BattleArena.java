@@ -96,7 +96,7 @@ public class BattleArena {
 			FightingP1(player1, player2);
 			checkLifePointsP2=checkIfPlayerHasLifepoints(player2);
 			if(checkLifePointsP2==false) {System.out.println(player1.getName() + " wins, Congratulations!");break;}
-			FightingP1(player2, player1);
+			FightingP2(player2, player1);
 			checkLifePointsP1=checkIfPlayerHasLifepoints(player1);
 			if(checkLifePointsP1==false) {System.out.println(player2.getName() + " wins, Congratulations!");break;}
 		}
