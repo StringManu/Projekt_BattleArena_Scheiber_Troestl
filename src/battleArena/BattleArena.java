@@ -5,15 +5,20 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class BattleArena {
 	
+	private Scanner sc;
+
+    public BattleArena() {
+        this.sc = new Scanner(System.in);
+    }
+	
 	public void FightingP1(Character player1, Character player2) {
-	Scanner sc = new Scanner(System.in);
 	
 	System.out.println("Player 1 it´s your turn: ");
 	System.out.println("What action do you choose? "
 			+ " \n\t Attack "
 			+ " \n\t activate special ability"
 			+ " \n\t deactivate special ability");
-	String move = sc.nextLine();
+	String move = sc.next().toLowerCase();
 	switch(move) {
 	
 	case "attack":
@@ -35,19 +40,17 @@ public class BattleArena {
 		System.out.println("Error!");
 	break;
 	 }
-	sc.close();
 	}
 	
 	
 	public void FightingP2(Character player1, Character player2) {
-		Scanner sc = new Scanner(System.in);
-		
+	
 		System.out.println("Player 2 it´s your turn: ");
 		System.out.println("What action do you choose? "
 				+ " \n\t Attack "
 				+ " \n\t activate speacial ability"
 				+ " \n\t deactivate special ability");
-		String move = sc.nextLine();
+		String move = sc.next().toLowerCase();
 		switch(move) {
 		
 		case "attack":
@@ -69,7 +72,6 @@ public class BattleArena {
 			System.out.println("Error!");
 		break;
 		 }
-		sc.close();
 		}
 	
 	public boolean decideWhoBeginns() {
@@ -99,7 +101,7 @@ public class BattleArena {
 			FightingP2(player2, player1);
 			checkLifePointsP1=checkIfPlayerHasLifepoints(player1);
 			if(checkLifePointsP1==false) {System.out.println(player2.getName() + " wins, Congratulations!");break;}
-		}
+		}sc.close();
 	}
 	
 }
