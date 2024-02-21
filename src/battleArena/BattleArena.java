@@ -8,6 +8,12 @@ public class BattleArena {
 	Scanner sc = new Scanner(System.in);
 	String move = sc.nextLine();
 	
+	System.out.println("Player 1 it´s your turn: ");
+	System.out.println("What action do you choose? "
+			+ " /n/t Attack "
+			+ " /n/t activate speacial ability"
+			+ " /n/t deactivate special ability");
+	
 	switch(move) {
 	
 	case "attack":
@@ -36,6 +42,12 @@ public class BattleArena {
 	public void FightingP2(Character player1, Character player2) {
 		Scanner sc = new Scanner(System.in);
 		String move = sc.nextLine();
+		
+		System.out.println("Player 2 it´s your turn: ");
+		System.out.println("What action do you choose? "
+				+ " /n/t Attack "
+				+ " /n/t activate speacial ability"
+				+ " /n/t deactivate special ability");
 		
 		switch(move) {
 		
