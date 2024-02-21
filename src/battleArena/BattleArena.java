@@ -24,6 +24,7 @@ public class BattleArena {
 	case "attack":
 		System.out.println("Character is attacking!");
 		player1.attack(player2);
+		System.out.println("Life Points of Player2: " + player2.getLifePoints());
 	break;
 	
 	case "activate special ability":
@@ -56,6 +57,7 @@ public class BattleArena {
 		case "attack":
 			System.out.println("Character is attacking!");
 			player2.attack(player1);
+			System.out.println("Life Points of Player1: " + player1.getLifePoints());
 		break;
 		
 		case "activate special ability":
