@@ -6,7 +6,7 @@ public class Dwarf extends Character{
 
 	private int attackDamage;
 	
-	public Dwarf(String name, int lifePoints, boolean specialAbility, int attackDamage) {
+	public Dwarf(String name) {
 		super(name);
 		this.attackDamage = ThreadLocalRandom.current().nextInt(15,25);
 	}
