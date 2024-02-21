@@ -11,7 +11,7 @@ public class BattleArena {
 	System.out.println("Player 1 it´s your turn: ");
 	System.out.println("What action do you choose? "
 			+ " \n\t Attack "
-			+ " \n\t activate speacial ability"
+			+ " \n\t activate special ability"
 			+ " \n\t deactivate special ability");
 	String move = sc.nextLine();
 	switch(move) {
@@ -22,12 +22,12 @@ public class BattleArena {
 	break;
 	
 	case "activate special ability":
-		System.out.println("Character is attacking!");
+		System.out.println("Character is using special ability!");
 		player1.setSpecialAbility(true);
 	break;
 	
 	case "deactivate special ability":
-		System.out.println("Character is attacking!");
+		System.out.println("Character is deactivating special ability!");
 		player1.setSpecialAbility(false);
 	break;
 	
@@ -56,12 +56,12 @@ public class BattleArena {
 		break;
 		
 		case "activate special ability":
-			System.out.println("Character is attacking!");
+			System.out.println("Character using special ability!");
 			player2.setSpecialAbility(true);
 		break;
 		
 		case "deactivate special ability":
-			System.out.println("Character is attacking!");
+			System.out.println("Character is deactivating special ability!");
 			player2.setSpecialAbility(false);
 		break;
 		
