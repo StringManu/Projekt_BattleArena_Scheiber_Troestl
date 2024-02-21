@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class BattleArena {
 	
+	public void beginFighting() {
 	Scanner sc = new Scanner(System.in);
 	String move = sc.nextLine();
 	
-	switch(sc) {
+	switch(move) {
 	
 	case "attack":
 		System.out.println("Character is attacking!");
@@ -20,8 +21,7 @@ public class BattleArena {
 	case "deactivate special ability":
 		System.out.println("Character is attacking!");
 	break;
-	
-	
+	}
 	}
 	
 }
