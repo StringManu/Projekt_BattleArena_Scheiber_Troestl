@@ -1,6 +1,7 @@
 package battleArena;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BattleArena {
 	
@@ -72,5 +73,22 @@ public class BattleArena {
 		 }
 		sc.close();
 		}
+	
+	public boolean decideWhoBeginns() {
+		int i=ThreadLocalRandom.current().nextInt(1,10);
+		if(i<=5) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean checkIfPlayerHasLifepoints(Character player) {
+		if(player.getLifePoints()==0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 	
 }
