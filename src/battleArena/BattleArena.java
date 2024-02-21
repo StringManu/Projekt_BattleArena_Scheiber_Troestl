@@ -10,9 +10,9 @@ public class BattleArena {
 	
 	System.out.println("Player 1 it´s your turn: ");
 	System.out.println("What action do you choose? "
-			+ " /n/t Attack "
-			+ " /n/t activate speacial ability"
-			+ " /n/t deactivate special ability");
+			+ " \n\t Attack "
+			+ " \n\t activate speacial ability"
+			+ " \n\t deactivate special ability");
 	String move = sc.nextLine();
 	switch(move) {
 	
@@ -44,9 +44,9 @@ public class BattleArena {
 		
 		System.out.println("Player 2 it´s your turn: ");
 		System.out.println("What action do you choose? "
-				+ " /n/t Attack "
-				+ " /n/t activate speacial ability"
-				+ " /n/t deactivate special ability");
+				+ " \n\t Attack "
+				+ " \n\t activate speacial ability"
+				+ " \n\t deactivate special ability");
 		String move = sc.nextLine();
 		switch(move) {
 		
