@@ -36,9 +36,13 @@ public abstract class Character {
 	public String toString() {
 		return "Character: " + name 
 				+ "/n" + "Life Points: " + lifePoints 
-				+ "/n" + "Special Ability: " + specialAbility;
+				+ "/n" + "Special AbilitSy: " + specialAbility;
 	}
 	
+	/**
+	 * Method to give a player some damage
+	 * @param points
+	 */
 	public void getDamage(int points) {
 		this.lifePoints = this.lifePoints - points;
 		if(this.lifePoints < 0) {
