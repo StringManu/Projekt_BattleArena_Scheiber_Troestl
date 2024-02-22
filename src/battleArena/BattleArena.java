@@ -11,6 +11,11 @@ public class BattleArena {
         this.sc = new Scanner(System.in);
     }
 	
+    /**
+     * Method for the selection of the moves a player can do
+     * @param player1 - the one that is attacking/ choosing the moves
+     * @param player2 - the one that is getting attacked
+     */
 	public void FightingP1(Character player1, Character player2) {
 	
 	System.out.println("Player 1 it´s your turn: ");
@@ -43,7 +48,11 @@ public class BattleArena {
 	 }
 	}
 	
-	
+	/**
+     * Method for the selection of the moves a player can do
+     * @param player1 - the one that is getting attacked
+     * @param player2 - the one that is attacking/ choosing the moves
+     */
 	public void FightingP2(Character player1, Character player2) {
 	
 		System.out.println("Player 2 it´s your turn: ");
@@ -76,6 +85,10 @@ public class BattleArena {
 		 }
 		}
 	
+	/**
+	 * Method to decide which player begins
+	 * @return
+	 */
 	public boolean decideWhoBeginns() {
 		int i=ThreadLocalRandom.current().nextInt(1,10);
 		if(i<=5) {
@@ -85,6 +98,11 @@ public class BattleArena {
 		}
 	}
 	
+	/**
+	 * Method to check if a player still has life points
+	 * @param player
+	 * @return
+	 */
 	public boolean checkIfPlayerHasLifepoints(Character player) {
 		if(player.getLifePoints()==0) {
 			return false;
@@ -93,6 +111,11 @@ public class BattleArena {
 		}
 	}
 	
+	/**
+	 * Method to start the fight between two players
+	 * @param player1
+	 * @param player2
+	 */
 	public void fight(Character player1, Character player2) {
 		boolean checkLifePointsP1=true;
 		boolean checkLifePointsP2=true;
