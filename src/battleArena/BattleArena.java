@@ -56,7 +56,7 @@ public class BattleArena {
 	 * @param player
 	 * @return
 	 */
-	public boolean checkIfPlayerHasLifepoints(Character player) {
+	private boolean checkIfPlayerHasLifepoints(Character player) {
 		if(player.getLifePoints()==0) {
 			return false;
 		} else {
