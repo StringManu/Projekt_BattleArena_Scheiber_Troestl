@@ -11,6 +11,11 @@ public class BattleArena {
         this.sc = new Scanner(System.in);
     }
 	
+    /**
+     * Method to start a fight between two players
+     * @param attacker
+     * @param defender
+     */
     public void Fighting(Character attacker, Character defender) {
 		System.out.println(attacker.getName() + ", it's your turn: ");
 		System.out.println("What action do you choose? "
