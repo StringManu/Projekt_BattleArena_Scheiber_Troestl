@@ -44,7 +44,7 @@ public abstract class Character {
 	 * @param points
 	 */
 	public void getDamage(int points) {
-		this.lifePoints = this.lifePoints - points;
+		this.lifePoints -= points;
 		if(this.lifePoints < 0) {
 			this.lifePoints = 0;
 		}

@@ -11,85 +11,38 @@ public class BattleArena {
         this.sc = new Scanner(System.in);
     }
 	
-    /**
-     * Method for the selection of the moves a player can do
-     * @param player1 - the one that is attacking/ choosing the moves
-     * @param player2 - the one that is getting attacked
-     */
-	public void FightingP1(Character player1, Character player2) {
-	
-	System.out.println("Player 1 it´s your turn: ");
-	System.out.println("What action do you choose? "
-			+ " \n\t Attack "
-			+ " \n\t activate special ability"
-			+ " \n\t deactivate special ability");
-	String move = sc.next().toLowerCase();
-	switch(move) {
-	
-	case "attack":
-		System.out.println("Character is attacking!");
-		player1.attack(player2);
-		System.out.println("Life Points of Player2: " + player2.getLifePoints());
-	break;
-	
-	case "activate special ability":
-		System.out.println("Character is using special ability!");
-		player1.setSpecialAbility(true);
-	break;
-	
-	case "deactivate special ability":
-		System.out.println("Character is deactivating special ability!");
-		player1.setSpecialAbility(false);
-	break;
-	
-	default:
-		System.out.println("Error!");
-	break;
-	 }
-	}
-	
-	/**
-     * Method for the selection of the moves a player can do
-     * @param player1 - the one that is getting attacked
-     * @param player2 - the one that is attacking/ choosing the moves
-     */
-	public void FightingP2(Character player1, Character player2) {
-	
-		System.out.println("Player 2 it´s your turn: ");
+    public void Fighting(Character attacker, Character defender) {
+		System.out.println(attacker.getName() + ", it's your turn: ");
 		System.out.println("What action do you choose? "
-				+ " \n\t Attack "
-				+ " \n\t activate speacial ability"
-				+ " \n\t deactivate special ability");
+				+ "\n\t Attack"
+				+ "\n\t Activate special ability"
+				+ "\n\t Deactivate special ability");
 		String move = sc.next().toLowerCase();
-		switch(move) {
-		
-		case "attack":
-			System.out.println("Character is attacking!");
-			player2.attack(player1);
-			System.out.println("Life Points of Player1: " + player1.getLifePoints());
-		break;
-		
-		case "activate special ability":
-			System.out.println("Character using special ability!");
-			player2.setSpecialAbility(true);
-		break;
-		
-		case "deactivate special ability":
-			System.out.println("Character is deactivating special ability!");
-			player2.setSpecialAbility(false);
-		break;
-		
-		default:
-			System.out.println("Error!");
-		break;
-		 }
+		switch (move) {
+			case "attack":
+				System.out.println(attacker.getName() + " is attacking!");
+				attacker.attack(defender);
+				System.out.println("Life Points of " + defender.getName() + ": " + defender.getLifePoints());
+				break;
+			case "activate special ability":
+				System.out.println(attacker.getName() + " is activating special ability!");
+				attacker.setSpecialAbility(true);
+				break;
+			case "deactivate special ability":
+				System.out.println(attacker.getName() + " is deactivating special ability!");
+				attacker.setSpecialAbility(false);
+				break;
+			default:
+				System.out.println("Invalid action!");
+				break;
 		}
+	}
 	
 	/**
 	 * Method to decide which player begins
 	 * @return
 	 */
-	public boolean decideWhoBeginns() {
+	public boolean decideWhoBegins() {
 		int i=ThreadLocalRandom.current().nextInt(1,10);
 		if(i<=5) {
 			return true;
@@ -117,16 +70,26 @@ public class BattleArena {
 	 * @param player2
 	 */
 	public void fight(Character player1, Character player2) {
-		boolean checkLifePointsP1=true;
-		boolean checkLifePointsP2=true;
-		while (checkLifePointsP1 && checkLifePointsP2) {
-			FightingP1(player1, player2);
-			checkLifePointsP2=checkIfPlayerHasLifepoints(player2);
-			if(checkLifePointsP2==false) {System.out.println(player1.getName() + " wins, Congratulations!");break;}
-			FightingP2(player2, player1);
-			checkLifePointsP1=checkIfPlayerHasLifepoints(player1);
-			if(checkLifePointsP1==false) {System.out.println(player2.getName() + " wins, Congratulations!");break;}
-		}sc.close();
+	    boolean player1Turn = decideWhoBegins();
+	    Character attacker, defender;
+	    if (player1Turn) {
+	        attacker = player1;
+	        defender = player2;
+	    } else {
+	        attacker = player2;
+	        defender = player1;
+	    }
+	    while (checkIfPlayerHasLifepoints(player1) && checkIfPlayerHasLifepoints(player2)) {
+	        Fighting(attacker, defender);
+	        if (!checkIfPlayerHasLifepoints(defender)) {
+	            System.out.println(attacker.getName() + " wins! Congratulations!");
+	            break;
+	        }
+	        Character temp = attacker;
+	        attacker = defender;
+	        defender = temp;
+	    }
+	    sc.close();
 	}
 	
 }
