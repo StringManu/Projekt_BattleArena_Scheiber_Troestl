@@ -17,7 +17,7 @@ public class BattleArena {
 				+ "\n\t Attack"
 				+ "\n\t Activate special ability"
 				+ "\n\t Deactivate special ability");
-		String move = sc.next().toLowerCase();
+		String move = sc.nextLine().toLowerCase();
 		switch (move) {
 			case "attack":
 				System.out.println(attacker.getName() + " is attacking!");
