@@ -42,7 +42,7 @@ public class BattleArena {
 	 * Method to decide which player begins
 	 * @return
 	 */
-	public boolean decideWhoBegins() {
+	private boolean decideWhoBegins() {
 		int i=ThreadLocalRandom.current().nextInt(1,10);
 		if(i<=5) {
 			return true;
