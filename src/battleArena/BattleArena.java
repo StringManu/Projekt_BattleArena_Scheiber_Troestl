@@ -18,24 +18,26 @@ public class BattleArena {
      */
     public void Fighting(Character attacker, Character defender) {
 		System.out.println(attacker.getName() + ", it's your turn: ");
-		System.out.println("What action do you choose? "
-				+ "\n\t Attack"
-				+ "\n\t Activate special ability"
-				+ "\n\t Deactivate special ability");
-		String move = sc.nextLine().toLowerCase();
+		System.out.println("What action do you choose? (Type a number... 1-3)"
+				+ "\n\t 1 = Attack "
+				+ "\n\t 2 = Activate special ability"
+				+ "\n\t 3 = Deactivate special ability");
+		int move = sc.nextInt();
 		switch (move) {
-			case "attack":
-				System.out.println(attacker.getName() + " is attacking!");
+			case 1:
 				attacker.attack(defender);
 				System.out.println(attacker.getName() + " just attacked! ");
 				System.out.println("Life Points of " + defender.getName() + ": " + defender.getLifePoints());
+				System.out.println("---------------------------------");
 				break;
-			case "activate special ability":
+			case 2:
 				System.out.println(attacker.getName() + " is activating special ability!");
+				System.out.println("---------------------------------");
 				attacker.setSpecialAbility(true);
 				break;
-			case "deactivate special ability":
+			case 3:
 				System.out.println(attacker.getName() + " is deactivating special ability!");
+				System.out.println("---------------------------------");
 				attacker.setSpecialAbility(false);
 				break;
 			default:
@@ -89,6 +91,26 @@ public class BattleArena {
 	        Fighting(attacker, defender);
 	        if (!checkIfPlayerHasLifepoints(defender)) {
 	            System.out.println(attacker.getName() + " wins! Congratulations!");
+	            System.out.println("           ________\r\n"
+	            		+ "          /        \\\r\n"
+	            		+ "         /          \\\r\n"
+	            		+ "        /____________\\\r\n"
+	            		+ "       /              \\\r\n"
+	            		+ "      /________________\\\r\n"
+	            		+ "     /                  \\\r\n"
+	            		+ "    /____________________\\\r\n"
+	            		+ "    |                    |\r\n"
+	            		+ "    |      _...._        |\r\n"
+	            		+ "    |   .-'      '-.     |\r\n"
+	            		+ "    |  /            \\    |\r\n"
+	            		+ "    | |              |   |\r\n"
+	            		+ "    | |      1       |   |\r\n"
+	            		+ "    | |              |   |\r\n"
+	            		+ "    |  \\            /    |\r\n"
+	            		+ "    |   '-._      _.-'    |\r\n"
+	            		+ "    |       `--'         |\r\n"
+	            		+ "    \\____________________/\r\n"
+	            		+ "");
 	            break;
 	        }
 	        Character temp = attacker;
