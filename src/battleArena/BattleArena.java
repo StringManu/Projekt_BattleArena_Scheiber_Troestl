@@ -90,26 +90,30 @@ public class BattleArena {
 	    while (checkIfPlayerHasLifepoints(player1) && checkIfPlayerHasLifepoints(player2)) {
 	        Fighting(attacker, defender);
 	        if (!checkIfPlayerHasLifepoints(defender)) {
-	            System.out.println(attacker.getName() + " wins! Congratulations!");
+	            System.out.println("\t" + attacker.getName() + " wins! Congratulations!");
 	            System.out.println("           ________\r\n"
 	            		+ "          /        \\\r\n"
 	            		+ "         /          \\\r\n"
-	            		+ "        /____________\\\r\n"
+	            		+ "        /__ Winner __\\\r\n"
 	            		+ "       /              \\\r\n"
 	            		+ "      /________________\\\r\n"
 	            		+ "     /                  \\\r\n"
 	            		+ "    /____________________\\\r\n"
 	            		+ "    |                    |\r\n"
 	            		+ "    |      _...._        |\r\n"
-	            		+ "    |   .-'      '-.     |\r\n"
-	            		+ "    |  /            \\    |\r\n"
-	            		+ "    | |              |   |\r\n"
-	            		+ "    | |      1       |   |\r\n"
-	            		+ "    | |              |   |\r\n"
-	            		+ "    |  \\            /    |\r\n"
-	            		+ "    |   '-._      _.-'    |\r\n"
+	            		+ "   /|   .-'      '-.     |\\\r\n"
+	            		+ "  / |  /            \\    | \\\r\n"
+	            		+ " |  | |              |   |  |\r\n"
+	            		+ " |  | |      1       |   |  |\r\n"
+	            		+ " |  | |              |   |  |\r\n"
+	            		+ " \\  |  \\            /    | /\r\n"
+	            		+ "  \\ |   '-._    _.-'     |/\r\n"
 	            		+ "    |       `--'         |\r\n"
 	            		+ "    \\____________________/\r\n"
+	            		+ "           |||||||\r\n"
+	            		+ "          // ||| \\\\\r\n"
+	            		+ "         //|||||||\\\\\r\n"
+	            		+ "-------------------------------\r\n"
 	            		+ "");
 	            break;
 	        }
