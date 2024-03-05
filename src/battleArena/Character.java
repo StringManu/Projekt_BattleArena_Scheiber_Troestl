@@ -50,6 +50,10 @@ public abstract class Character {
 		}
 	}
 	
+	/**
+	 * Method to attack an enemy
+	 * @param enemy
+	 */
 	public abstract void attack(Character enemy);
 		
 }
