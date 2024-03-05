@@ -93,7 +93,7 @@ public class BattleArena {
 	        }
 	        Character temp = attacker;
 	        attacker = defender;
-	        defender = temp;
+	        defender = temp; 
 	    }
 	    sc.close();
 	}
