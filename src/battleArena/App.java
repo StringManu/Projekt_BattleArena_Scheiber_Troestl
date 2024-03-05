@@ -14,6 +14,7 @@ public class App {
 	private static Character chooseCharacter() {
 		Character p1 = new Dragon(chooseName());
 		Character p2 = new Dwarf(p1.getName());
+		System.out.println("Available Characters " + "\n\t Dragon" + "\n\t Dwarf");
 		System.out.println("Choose your Charakter!");
 		String character = sc.nextLine().toLowerCase();
 		switch(character) {
