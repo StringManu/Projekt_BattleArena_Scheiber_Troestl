@@ -15,7 +15,7 @@ public class Dragon extends Character{
 	public String toString() {
 		return super.toString();
 	}
-
+ 
 	/**
 	 * Method to calculate the attack damage that will be present during the next attack
 	 * @return = the next damage that will be dealed
@@ -23,11 +23,9 @@ public class Dragon extends Character{
 	private int calculateAttackDamage() {
 		if(this.isSpecialAbility()==true) {
 			this.attackDamage = ThreadLocalRandom.current().nextInt(20,25)-calculateMalus();
-			System.out.println("Test: " + this.attackDamage);
 			return this.attackDamage;
 		} else {
 			this.attackDamage = ThreadLocalRandom.current().nextInt(20,25);
-			System.out.println("Test: " + this.attackDamage);
 			return this.attackDamage;
 		}
 	}

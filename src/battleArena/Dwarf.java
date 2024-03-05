@@ -26,16 +26,13 @@ public class Dwarf extends Character{
 	private int calculateAttackDamage() {
 		if(this.isSpecialAbility()==false) {
 		this.attackDamage=ThreadLocalRandom.current().nextInt(15,25);
-		System.out.println("Test: " + this.attackDamage);
 		return this.attackDamage;
-		} else {
+		} else { 
 			if(calculateProbabilityForSpecialAttack()) {
 				this.attackDamage=ThreadLocalRandom.current().nextInt(15,25)*2;
-				System.out.println("Test: " + this.attackDamage);
 				return this.attackDamage;
 			} else {
 				this.attackDamage=ThreadLocalRandom.current().nextInt(15,25)/2;
-				System.out.println("Test: " + this.attackDamage);
 				return this.attackDamage;
 			}
 		}
