@@ -15,12 +15,12 @@ public class App {
 		Character p1 = new Dragon(chooseName());
 		Character p2 = new Dwarf(p1.getName());
 		System.out.println("Choose your Charakter!");
-		String character = sc.nextLine();
+		String character = sc.nextLine().toLowerCase();
 		switch(character) {
 		
-			case "Dragon" :
+			case "dragon" :
 				return p1;
-			case "Dwarf" :
+			case "dwarf" :
 				return p2;
 			default:
 				System.out.println("Error, please type again!");
