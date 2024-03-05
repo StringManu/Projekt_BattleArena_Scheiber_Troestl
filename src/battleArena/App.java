@@ -42,7 +42,6 @@ public class App {
 	public static void main(String[] args) {
 		 
 		
-		
 		BattleArena b1 =new BattleArena();
 		
 		b1.fight(chooseCharacter(), chooseCharacter());
