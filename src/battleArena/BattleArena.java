@@ -27,15 +27,18 @@ public class BattleArena {
 			case "attack":
 				System.out.println(attacker.getName() + " is attacking!");
 				attacker.attack(defender);
+				System.out.println(attacker.getName() + " just attacked! ");
 				System.out.println("Life Points of " + defender.getName() + ": " + defender.getLifePoints());
 				break;
 			case "activate special ability":
 				System.out.println(attacker.getName() + " is activating special ability!");
 				attacker.setSpecialAbility(true);
+				System.out.println(attacker.getName() + " just activated his special ability! ");
 				break;
 			case "deactivate special ability":
 				System.out.println(attacker.getName() + " is deactivating special ability!");
 				attacker.setSpecialAbility(false);
+				System.out.println(attacker.getName() + " just deactivated his special ability! ");
 				break;
 			default:
 				System.out.println("Invalid action!");
