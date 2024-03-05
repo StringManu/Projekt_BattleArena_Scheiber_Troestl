@@ -6,11 +6,19 @@ public class App {
 	
 	static Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * Method that lets the player choose his or her name
+	 * @return the chosen name
+	 */
 	private static String chooseName() {
 		System.out.println("Please type in your name!");
 		return sc.nextLine();
 	}
 	
+	/**
+	 * Method that lets the player choose the character 
+	 * @return the chosen character 
+	 */
 	private static Character chooseCharacter() {
 		Character p1 = new Dragon(chooseName());
 		Character p2 = new Dwarf(p1.getName());
