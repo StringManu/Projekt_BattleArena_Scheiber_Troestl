@@ -13,7 +13,7 @@ public class App {
 	
 	private static Character chooseCharacter() {
 		Character p1 = new Dragon(chooseName());
-		Character p2 = new Dwarf(chooseName());
+		Character p2 = new Dwarf(p1.getName());
 		System.out.println("Choose your Charakter!");
 		String character = sc.nextLine();
 		switch(character) {
@@ -36,9 +36,7 @@ public class App {
 		
 		BattleArena b1 =new BattleArena();
 		
-		Character p1 = new Dragon("Kamil");
-		Character p2 = new Dwarf("Hans");
-		b1.fight(p1, p2);
+		b1.fight(chooseCharacter(), chooseCharacter());
 
 		sc.close();
 	}
